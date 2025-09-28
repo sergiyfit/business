@@ -245,6 +245,7 @@ main
 
             font-weight: 700
         li
+            position: relative
             padding: 20px
             border-bottom: 1px solid $primary-blue        
         .join-now
@@ -291,6 +292,13 @@ main
             &--text
                 margin: 20px 0
                 line-height: 1.5
+    .feedback
+        padding: 50px 0 70px
+        &__title
+            text-align: center
+            font-size: 30px
+            +media(640)
+                font-size: 50px
     .numbers
         padding: 50px 0 70px
         font-size: 14px
@@ -332,6 +340,7 @@ main
             row-gap: 20px
             flex-direction: column
             li
+                position: relative
                 border: 1px solid $primary-black
                 padding: 7px
                 border-radius: 7px
@@ -408,3 +417,31 @@ footer
     width: 50px
     height: 50px
     background-image: url(../img/icons/youtube.svg)
+
+.rad-button
+    position: absolute
+    right: 10px
+    top: 10px
+    span
+        display: block
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        background-color: $primary-orange
+        z-index: 5
+        &::before
+            +reset()
+            width: 25px
+            height: 3px
+            background-color: $primary-black
+            transform: translate(-50%, -50%) rotate(0deg)
+            left: 50%
+            top: 50%
+        &::after
+            +reset()
+            width: 25px
+            height: 3px
+            background-color: $primary-black
+            transform: translate(-50%, -50%) rotate(90deg)
+            left: 50%
+            top: 50%
