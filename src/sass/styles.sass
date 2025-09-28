@@ -109,6 +109,37 @@ ul, li
         padding: 25px 100px
         font-size: 24px
 
+.rad-button
+    position: absolute
+    right: 10px
+    top: 15px
+    span
+        display: block
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        background-color: $primary-orange
+        z-index: 5
+        &::before
+            +reset()
+            width: 25px
+            height: 3px
+            background-color: $primary-black
+            transform: translate(-50%, -50%) rotate(0deg)
+            left: 50%
+            top: 50%
+            transition:  all $anim-time ease, width $anim-time ease $anim-time
+        &::after
+            +reset()
+            width: 25px
+            height: 3px
+            background-color: $primary-black
+            transform: translate(-50%, -50%) rotate(-90deg)
+            left: 50%
+            top: 50%
+            transition: all $anim-time ease 
+
+
 header
     .hero
         padding: 20px 0 
@@ -229,7 +260,7 @@ main
                 font-size: 50px
         &__day   
             display: block
-            font-size: 18px
+            font-size: 20px
             +media(640)
                 font-size: 24px
             font-weight: 700
@@ -247,6 +278,7 @@ main
         li
             position: relative
             padding: 20px
+            padding-right: 50px
             border-bottom: 1px solid $primary-blue        
         .join-now
             font-size: 18px
@@ -341,15 +373,19 @@ main
             flex-direction: column
             li
                 position: relative
-                border: 1px solid $primary-black
-                padding: 7px
+                border: 1px solid $primary-black   
                 border-radius: 7px
+                padding: 15px
+                padding-right: 50px
                 +media(640)
                     padding: 30px
+                    padding-right: 50px
                     border-radius: 15px
+            .rad-button
+                top: 5px
         &__text
             display: block
-            font-size: 18px
+            font-size: 16px
             +media(640)
                 font-size: 24px
             font-weight: 700
@@ -418,35 +454,6 @@ footer
     height: 50px
     background-image: url(../img/icons/youtube.svg)
 
-.rad-button
-    position: absolute
-    right: 10px
-    top: 10px
-    span
-        display: block
-        width: 40px
-        height: 40px
-        border-radius: 50%
-        background-color: $primary-orange
-        z-index: 5
-        &::before
-            +reset()
-            width: 25px
-            height: 3px
-            background-color: $primary-black
-            transform: translate(-50%, -50%) rotate(0deg)
-            left: 50%
-            top: 50%
-            transition:  all 1s ease, width 0.5s ease 1s
-        &::after
-            +reset()
-            width: 25px
-            height: 3px
-            background-color: $primary-black
-            transform: translate(-50%, -50%) rotate(-90deg)
-            left: 50%
-            top: 50%
-            transition: all 1s ease 
 .show
     span
         &::after
@@ -458,4 +465,4 @@ footer
     font-size: 0 !important
     margin-top: 0 !important
     opacity: 0 !important
-    transition: all 1s ease 1s, opacity 1s ease !important
+    transition: all $anim-time ease $anim-time, opacity $anim-time ease !important
