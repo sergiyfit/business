@@ -236,7 +236,7 @@ main
         &__text
             margin-top: 20px          
             display: block
-            
+            transition: all 1s ease , opacity 1s ease 1s
             font-size: 14px
             +media(640)
                 font-size: 20px
@@ -356,8 +356,8 @@ main
         &__answer   
             margin-top: 20px          
             display: block
-            
             font-size: 14px
+            transition: all 1s ease, opacity 1s ease 1s
             +media(640)
                 font-size: 20px
 footer
@@ -437,11 +437,25 @@ footer
             transform: translate(-50%, -50%) rotate(0deg)
             left: 50%
             top: 50%
+            transition:  all 1s ease, width 0.5s ease 1s
         &::after
             +reset()
             width: 25px
             height: 3px
             background-color: $primary-black
-            transform: translate(-50%, -50%) rotate(90deg)
+            transform: translate(-50%, -50%) rotate(-90deg)
             left: 50%
             top: 50%
+            transition: all 1s ease 
+.show
+    span
+        &::after
+            transform: translate(-50%, -50%) rotate(720deg)
+        &::before
+            transform: translate(-50%, -50%) rotate(810deg)
+            width: 0
+.hidden-part
+    font-size: 0 !important
+    margin-top: 0 !important
+    opacity: 0 !important
+    transition: all 1s ease 1s, opacity 1s ease !important

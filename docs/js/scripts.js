@@ -1,0 +1,1 @@
+let radBtns=document.querySelectorAll(".rad-button");radBtns.forEach((t=>{t.parentElement.lastElementChild.classList.add("hidden-part"),t.onclick=()=>{t.classList.toggle("show"),t.parentElement.lastElementChild.classList.toggle("hidden-part")}}));
