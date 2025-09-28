@@ -222,7 +222,7 @@ main
             display: flex
             flex-direction: column
             gap: 30px
-        &__title
+        &__header
             text-align: center
             font-size: 30px
             +media(640)
@@ -240,10 +240,19 @@ main
             font-size: 14px
             +media(640)
                 font-size: 20px
+        &__title
+            margin: 0
+
+            font-weight: 700
         li
             padding: 20px
             border-bottom: 1px solid $primary-blue        
-
+        .join-now
+            font-size: 18px
+            color: $primary-blue
+            +media(640)
+                font-size: 24px
+        
     .speaker
         padding: 50px 0
         .wrapper
