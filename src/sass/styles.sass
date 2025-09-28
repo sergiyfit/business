@@ -1,15 +1,350 @@
 @mixin media($size)
-    @media screen and (max-width:#{$size}px)
+    @media screen and (min-width:#{$size}px)
         @content
-        
+
+@mixin reset()
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+
+                
+
+
+@import "variables"
+
+
 
 html
     font-size: 1px
 
 html,body
+    margin: 0
     scroll-behavior: smooth
-
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif
+    font-family: "Mulish" 
 a
     text-decoration: none
     &:hover
         cursor: url("../img/icons/cursor.cur") , pointer
+
+ul, li
+    list-style: none
+    padding: 0
+    margin: 0
+
+.wrapper
+    padding-left: 7px
+    padding-right: 7px
+    margin: 0 auto
+    max-width: 1100px
+    +media(640)
+        padding-left: 50px
+        padding-right: 50px
+
+
+.flex__block
+    display: flex
+    flex-direction: column
+    align-items: center
+    +media(640)
+        flex-direction: row
+
+.light-block
+    background-color: $primary-white
+    color: $primary-black
+.dark-block
+    background-color: $primary-black
+    color: $primary-orange
+
+.cta
+    margin: 40px 0
+    max-width: 400px
+    text-align: center
+.price
+    padding-top: 25px
+
+    display: flex
+    align-items: flex-end
+    justify-content: center
+    gap: 25px
+    +media(640)
+        justify-content: center
+
+    .cross
+        font-size: 24px
+        position: relative
+        &::before
+            +reset()
+            transform: translate(-50%, 10px) rotate(15deg)
+            left: 50%
+            width: 100%
+            max-width: 300px
+            border: 1px solid black
+        &::after
+            
+            +reset()
+            transform: translate(-50%, 10px) rotate(-15deg)
+            left: 50%
+            width: 100%
+            border: 1px solid black
+
+
+    .active
+        font-size: 40px
+.join-now
+    // text-align: center
+    margin-bottom: 55px
+
+.button-start
+    display: inline-block
+    background-color: $primary-blue
+    color: $primary-white
+    text-align: center
+    padding: 15px 100px
+    font-size: 18px
+    margin: 20px 
+    border-radius: 15px
+    +media(640)
+        padding: 25px 100px
+        font-size: 24px
+
+header
+    .hero
+        padding: 20px 0 
+        h1
+            font-size: 36px
+            +media(640)
+                font-size: 80px
+
+        &__title
+            font-size: 30px 
+            text-transform: uppercase
+            margin: 0
+            +media(640)
+                font-size: 50px
+            &--colored
+                color: $primary-blue
+        &__text
+            font-size: 18px
+            font-weight: 700
+            line-height: 1.2
+            margin-top: 35px 
+            +media(640)
+                font-size: 24px
+
+        &__image
+            width: 100%
+            max-width: 500px
+            +media(640)
+                width: 45%
+
+        &__list
+            list-style: none
+            padding-left: 40px
+
+            &--item
+                font-size: 16px
+                margin: 10px 0
+                +media(640)
+                    font-size: 24px
+                position: relative
+                &::before
+                    +reset()
+                    width: 30px
+                    height: 30px
+                    top: -5px
+                    +media(640)
+                        top: 0
+                    left: -40px
+                    background-position: center
+                    background-size: contain
+                    background-repeat: no-repeat
+                    background-image: url("../img/icons/small-arrow.svg")
+        .join-now
+            font-size: 18px
+            color: $primary-blue
+            +media(640)
+                font-size: 24px
+
+main
+    .details
+        padding: 40px 0
+        +media(640)
+            padding: 80px 0
+
+        &__title
+            font-size: 30px 
+            text-transform: uppercase
+            margin: 0
+            margin-bottom: 25px
+            color: $primary-white
+            +media(640)
+                font-size: 50px            
+        &__list
+            display: flex
+            flex-wrap: wrap
+            column-gap: 20px
+            &--item
+                display: flex
+                align-items: center
+                margin: 10px 0
+                width: 100%
+                font-size: 16px
+                +media(640)
+                    font-size: 24px
+                +media(840)
+                    width: calc( 50% - 10px )
+                span
+                    color: $primary-white
+                img
+                    margin-right: 20px
+                    width: 50px
+                    height: 50px
+                    object-fit: contain
+                    object-position: center
+                    +media(640)
+                        width: 100px
+                        height: 100px
+        .join-now
+            margin-bottom: 0
+            font-size: 24px
+        .price
+            padding-top: 10px
+        .cross
+            &::before
+                border-color: $primary-blue
+            &::after
+                border-color: $primary-blue
+    .speaker
+        .wrapper
+            display: flex
+            flex-direction: column
+            gap: 30px
+
+            +media(640)
+                flex-direction: row
+                justify-content: space-between
+                align-items: center
+        &__photobox
+            +media(640)
+                max-width: 50%
+            h2
+                text-align: center
+                font-size: 30px
+                +media(640)
+                    font-size: 50px
+            img
+                width: 100%
+                display: block
+        &__text
+            +media(640)
+                max-width: 50%
+        &__name
+            color: $primary-blue
+            font-weight: bold
+            font-size: 20px
+            +media(640)
+                font-size: 40px
+        &__skills
+            font-size: 16px
+            +media(640)
+                font-size: 22px     
+            &--text
+                margin: 20px 0
+                line-height: 1.5
+    .numbers
+        padding: 30px 0
+        font-size: 14px
+        color: $primary-white
+        +media(640)
+            font-size: 18px
+        &__container
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+            row-gap: 20px
+        &__element
+            display: flex
+            gap: 20px
+            width: 100%
+            align-items: center
+            align-content: stretch
+
+            +media(480)
+                width: 50% 
+            +media(880)
+                width: 33.33% 
+            img
+                display: block
+                width: 50px
+                +media(480)
+                    width: 75px
+                +media(728)    
+                    width: 100px
+    .questions
+        padding: 50px 0
+        &__title
+            text-align: center
+            font-size: 30px
+            +media(640)
+                font-size: 50px
+        &__conteiner
+            display: flex
+            row-gap: 20px
+            flex-direction: column
+            li
+                border: 1px solid $primary-black
+                padding: 7px
+                border-radius: 15px
+                +media(640)
+                    padding: 30px
+                    border-radius: 10px
+        &__text
+            display: block
+            font-size: 24px
+            font-weight: 700
+        &__answer   
+            margin-top: 20px          
+            display: block
+            font-size: 20px
+footer
+    .wrapper        
+        display: flex
+        flex-direction: column
+        gap: 30px
+        padding: 50px 0
+        +media(640)
+            flex-direction: row
+            justify-content: space-between
+            align-items: center
+    .files
+        width: 50%
+        &__link
+            color: $primary-white
+            font-size: 16px
+            line-height: 24px
+            display: block
+        .social 
+            display: flex
+            gap: 20px
+    .support
+        width: 50%
+        &__title
+            font-size: 24px
+            +media(640)
+                font-size: 36px
+        a
+            color: $primary-white
+            font-size: 16px
+            line-height: 24px
+            display: block
+    .social
+        column-gap: 20px
+        a
+            width: 50px
+            height: 50px
+            display: block
+            background-repeat: no-repeat
+            background-position: center
+            
