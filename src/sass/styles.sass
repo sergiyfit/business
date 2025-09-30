@@ -124,16 +124,16 @@ ul, li
             +reset()
             width: 25px
             height: 3px
-            background-color: $primary-black
+            background-color: $primary-white
             transform: translate(-50%, -50%) rotate(0deg)
             left: 50%
             top: 50%
-            transition:  all $anim-time ease, width $anim-time ease $anim-time
+            transition:  all $anim-time ease
         &::after
             +reset()
             width: 25px
             height: 3px
-            background-color: $primary-black
+            background-color: $primary-white
             transform: translate(-50%, -50%) rotate(-90deg)
             left: 50%
             top: 50%
@@ -265,8 +265,7 @@ main
                 font-size: 24px
             font-weight: 700
         &__text
-            margin-top: 20px          
-            display: block
+            margin-top: 20px  
             transition: all $anim-time ease , opacity $anim-time ease $anim-time
             font-size: 14px
             +media(640)
@@ -393,8 +392,7 @@ main
                 font-size: 24px
             font-weight: 700
         &__answer   
-            margin-top: 20px          
-            display: block
+            margin-top: 20px  
             font-size: 14px
             transition: all $anim-time ease, opacity $anim-time ease $anim-time
             +media(640)
@@ -463,18 +461,14 @@ footer
         border: 3px solid $primary-orange
         background-color: #fff
         &::after
-            transform: translate(-50%, -50%) rotate(0deg)
-        &::before
-            transform: translate(-50%, -50%) rotate(90deg)
+            background-color: $primary-orange
+            // transform: translate(-50%, -50%) rotate(0deg)
             width: 0
+        &::before
+            background-color: $primary-orange
+            // transform: translate(-50%, -50%) rotate(90deg)
 .hidden-part
-    font-size: 0 !important
-    margin-top: 0 !important
-    opacity: 0 !important
-    transition: all $anim-time ease $anim-time, opacity $anim-time ease !important
-    img
-        height: 0
-        transition: all $anim-time ease
+    display: none
 .emoji 
     width: 40px
     height: 40px
