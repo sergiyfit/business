@@ -69,7 +69,7 @@ ul, li
     padding-top: 25px
 
     display: flex
-    align-items: flex-end
+    align-items: center
     justify-content: center
     gap: 25px
     +media(640)
@@ -79,20 +79,20 @@ ul, li
         font-size: 24px
         color: grey
         position: relative
-        &::before
-            +reset()
-            transform: translate(-50%, 10px) rotate(15deg)
-            left: 50%
-            width: 100%
-            max-width: 300px
-            border: 1px dashed $primary-orange
+        // &::before
+        //     +reset()
+        //     transform: translate(-50%, 10px) rotate(15deg)
+        //     left: 50%
+        //     width: 100%
+        //     max-width: 300px
+        //     border: 1px dashed $primary-orange
         &::after
             
             +reset()
             transform: translate(-50%, 10px) rotate(-15deg)
             left: 50%
             width: 100%
-            border: 1px dashed $primary-orange
+            border: 2px solid #bcbcbccf
 
 
     .active
@@ -107,16 +107,18 @@ ul, li
     color: $primary-white
     text-align: center
     padding: 15px 100px
-    font-size: 18px
+    font-size: 24px
     margin: 20px 0 
     border-radius: 15px
     width: 100%
     font-weight: 900
     box-sizing: border-box
+    text-transform: uppercase
+
     +media(640)
         width: auto
         padding: 25px 100px
-        font-size: 24px
+        font-size: 32px
 
 .rad-button
     position: absolute
@@ -165,18 +167,30 @@ ul, li
 header
     .hero
         padding: 20px 0 
+        width: 100%
+        box-sizing: border-box
         h1
             font-size: 36px
             font-weight: 900
+            white-space: nowrap
+            z-index: 3
             +media(640)
+                font-size: 72px
+            +media(980)
                 font-size: 80px
 
         &__title
             font-weight: 900
-            font-size: 30px 
+            font-size: 18px 
             text-transform: uppercase
             margin: 0
+            margin-top: 10px
+            +media(400)
+                font-size: 30px 
             +media(640)
+                margin-top: 20px
+                font-size: 38px
+            +media(1024)
                 font-size: 50px
             &--colored
                 color: $primary-blue
@@ -184,15 +198,32 @@ header
             font-size: 18px
             font-weight: 700
             line-height: 1.2
-            margin-top: 35px 
+            margin-top: 35px
             +media(640)
+                width: 50%
+                font-size: 20px
+            +media(866)
+                max-width: 500px
                 font-size: 24px
+            
+        &__block
+            display: flex
+            column-gap: 20px
+            flex-direction: row
+            align-items: center
 
         &__image
-            width: 100%
+            display: block
+            aspect-ratio: 500 / 400
+            width: 45%
             max-width: 500px
+            z-index: 0
             +media(640)
                 width: 45%
+                position: absolute
+                right: 0
+                top: 30%
+                transform: translateY(-50%)
 
         &__list
             list-style: none
@@ -214,6 +245,7 @@ header
             flex-direction: column
             justify-content: center
             align-items: center
+            position: relative
             +media(640)
                 align-items: start
 
@@ -263,9 +295,9 @@ main
             padding-top: 10px
         .cross
             &::before
-                border-color: $primary-blue
+                border-color: #4b4b4b95
             &::after
-                border-color: $primary-blue
+                border-color: #bcbcbccf
     .program
         padding: 50px 0
         .wrapper
@@ -322,8 +354,12 @@ main
             h2
                 text-align: center
                 font-weight: 900
-                font-size: 30px
+                font-size: 28px
+                +media(400)
+                    font-size: 40px
+                    letter-spacing: -2px
                 +media(640)
+                    letter-spacing: -3px
                     font-size: 50px
             img
                 width: 70%
@@ -337,10 +373,14 @@ main
             color: $primary-blue
             font-weight: bold
             font-size: 20px
+            padding-left: 50px
+            box-sizing: border-box
             +media(640)
                 font-size: 40px
         &__skills
             font-size: 16px
+            padding-left: 50px
+            box-sizing: border-box
             +media(640)
                 font-size: 22px     
             &--text
