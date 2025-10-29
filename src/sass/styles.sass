@@ -66,17 +66,17 @@ ul, li
     +media(640)
         max-width: 400px
 .price
-    padding-top: 25px
+    padding-top: 15px
 
     display: flex
     align-items: center
     justify-content: center
-    gap: 25px
+    gap: 15px
     +media(640)
         justify-content: center
 
     .cross
-        font-size: 24px
+        font-size: 20px
         color: grey
         position: relative
         // &::before
@@ -96,7 +96,7 @@ ul, li
 
 
     .active
-        font-size: 40px
+        font-size: 36px
 .join-now
     // text-align: center
     margin-bottom: 55px
@@ -108,7 +108,7 @@ ul, li
     text-align: center
     padding: 15px 100px
     font-size: 24px
-    margin: 20px 0 
+    margin: 10px 0 
     border-radius: 15px
     width: 100%
     font-weight: 900
@@ -116,7 +116,7 @@ ul, li
     text-transform: uppercase
 
     +media(640)
-        width: auto
+        // width: auto
         padding: 25px 100px
         font-size: 32px
 
@@ -165,12 +165,60 @@ ul, li
         background-image: url("../img/icons/small-arrow.svg")
 
 header
+    .mini-header
+        .addtosocial 
+            p
+                margin: 0
+                text-align: center
+                font-size: 16px
+                padding: 7px
+                box-sizing: border-box
+                background-color: #c9c4b1
+                color: #fff
+                font-weight: 500
+            span
+                display: none
+                +media(640)
+                    display: inline-block
+        .social-links
+            display: flex
+            justify-content: space-between
+            margin-top: 10px
+            box-sizing: border-box
+            align-items: flex-end
+            .mini-header
+                font-size: 13px
+                padding: 5px 7px
+                border-radius: 5px
+
+                font-weight: 900
+                background-color: $primary-blue
+                color: #fff
+                +media(680)
+                    font-size: 18px
+                    padding: 10px 15px
+            .social-box
+                display: flex
+                gap: 10px
+            .social-link
+                img
+                    transform: all 1s ease
+                    width: 40px
+                    height: 40px
+                    display: block
+                    +media(680)
+                        width: 50px
+                        height: 50px
+                    &:hover
+                        transform: scale(110%)
+
     .hero
         padding: 20px 0 
         width: 100%
         box-sizing: border-box
         h1
             font-size: 36px
+            font-size: 15vw
             font-weight: 900
             white-space: nowrap
             z-index: 3
@@ -182,13 +230,13 @@ header
         &__title
             font-weight: 900
             font-size: 18px 
+            font-size: 9vw 
             text-transform: uppercase
             margin: 0
-            margin-top: 10px
-            +media(400)
-                font-size: 30px 
+            // +media(400)
+            //     font-size: 30px 
             +media(640)
-                margin-top: 20px
+                margin-top: 10px
                 font-size: 38px
             +media(1024)
                 font-size: 50px
@@ -255,12 +303,13 @@ main
         padding: 40px 0
         +media(640)
             padding: 80px 0
+        h2
+            margin-bottom: 25px
 
         &__title
+            margin: 0
             font-size: 30px 
             text-transform: uppercase
-            margin: 0
-            margin-bottom: 25px
             color: $primary-white
             +media(640)
                 font-size: 50px            
@@ -398,6 +447,8 @@ main
         padding: 50px 0 70px
         font-size: 14px
         color: $primary-white
+        font-family: "Mulish" 
+        font-weight: bolder
         +media(640)
             font-size: 18px
         &__container
@@ -533,6 +584,6 @@ footer
 .hidden-part
     display: none
 .emoji 
-    width: 40px
-    height: 40px
+    width: 30px
+    height: 30px
     transform: translateY(40%)
